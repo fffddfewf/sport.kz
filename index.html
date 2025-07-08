@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фитнес-дом: Мой путь к форме</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Навигация -->
+  <nav class="bg-white shadow py-4 mb-4">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
+      <a href="index.html" class="text-blue-700 font-bold underline">Главная</a>
+      <a href="nutrition.html" class="text-green-700 hover:underline">Питание</a>
+      <a href="training.html" class="text-indigo-700 hover:underline">Тренировки</a>
+    </div>
+  </nav>
+  <!-- Шапка -->
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-10 shadow-lg">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-2">🏋️ Фитнес-дом</h1>
+      <p class="text-xl">Мой путь к телу мечты — питание, тренировки, дисциплина</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10 space-y-8">
+    <!-- Цель -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-2">🎯 Моя цель</h2>
+      <p>Похудеть, избавиться от жира и одновременно набрать мышечную массу. Тренировки только дома, без оборудования. Использую простые, недорогие продукты.</p>
+    </section>
+
+    <!-- Режим дня -->
+    <section class="bg-white p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-bold mb-2">🕒 Мой режим дня</h2>
+      <ul class="list-disc pl-6 text-gray-700 space-y-1">
+        <li>Подъём: 7:30–8:00</li>
+        <li>Сон: около 00:00</li>
+        <li>Рабочий день: сидячий</li>
+        <li>Физическая активность: в основном вечером</li>
+        <li>Доступные продукты: яйца, каши, картошка, овощи, немного мяса</li>
+      </ul>
+    </section>
+
+    <!-- Push-уведомление (макет/заглушка) -->
+    <section class="bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-md shadow">
+      <h2 class="text-xl font-semibold mb-1">🔔 Напоминание</h2>
+      <p class="text-gray-800">Чтобы не забыть про приём пищи или тренировку — включи push-уведомления (если поддерживается в будущем обновлении сайта).</p>
+    </section>
+
+    <!-- Кнопки перехода -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <a href="nutrition.html" class="block bg-green-500 hover:bg-green-600 text-white text-center py-6 rounded-lg shadow-md text-xl font-semibold">🍽️ План питания</a>
+      <a href="training.html" class="block bg-indigo-500 hover:bg-indigo-600 text-white text-center py-6 rounded-lg shadow-md text-xl font-semibold">💪 План тренировок</a>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 Фитнес-дом. Все права защищены.
+  </footer>
+</body>
+</html>

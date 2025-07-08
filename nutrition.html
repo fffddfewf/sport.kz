@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>План питания — Фитнес-дом</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleCheckbox(el) {
+      el.classList.toggle('line-through');
+      el.classList.toggle('text-green-600');
+    }
+  </script>
+</head>
+<body class="bg-yellow-50 text-gray-800 font-sans">
+  <!-- Навигация -->
+  <nav class="bg-white shadow py-4 mb-4">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6">
+      <a href="index.html" class="text-blue-700 hover:underline">Главная</a>
+      <a href="nutrition.html" class="text-green-700 font-bold underline">Питание</a>
+      <a href="training.html" class="text-indigo-700 hover:underline">Тренировки</a>
+    </div>
+  </nav>
+  <header class="bg-green-600 text-white py-6 shadow">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold">🍽️ План питания на неделю</h1>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <table class="table-auto w-full border border-gray-300">
+      <thead>
+        <tr class="bg-green-200">
+          <th class="p-2 border">День</th>
+          <th class="p-2 border">Завтрак</th>
+          <th class="p-2 border">Обед</th>
+          <th class="p-2 border">Ужин</th>
+          <th class="p-2 border">Перекус</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200 text-sm md:text-base">
+        <!-- Один примерный день с чекбоксами -->
+        <tr>
+          <td class="p-2 border font-semibold">Пн</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">✅ 2 яйца, картошка, чай</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">✅ Гречка, мясо, салат</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">✅ Творог, морковь</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">✅ Яблоко / хлеб</td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Вт</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">Овсянка, чай</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">Пюре, мясо, капуста</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">Яйцо, салат</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleCheckbox(this)">Чай с хлебом</td>
+        </tr>
+        <!-- Добавь оставшиеся дни аналогично -->
+      </tbody>
+    </table>
+
+    <div class="text-center mt-10">
+      <a href="index.html" class="text-green-600 hover:underline">← Назад на главную</a>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 Фитнес-дом. Все права защищены.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>План тренировок — Фитнес-дом</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-id]').forEach(cell => {
+        const id = cell.getAttribute('data-id');
+        if (localStorage.getItem(id) === 'true') {
+          cell.classList.add('line-through', 'text-blue-600');
+        }
+      });
+    });
+
+    function toggleExercise(el) {
+      const id = el.getAttribute('data-id');
+      el.classList.toggle('line-through');
+      el.classList.toggle('text-blue-600');
+      const done = el.classList.contains('line-through');
+      localStorage.setItem(id, done);
+    }
+  </script>
+</head>
+<body class="bg-blue-50 text-gray-800 font-sans">
+  <header class="bg-indigo-600 text-white py-6 shadow">
+    <nav class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <h1 class="text-3xl font-bold text-center md:text-left">💪 План тренировок на неделю</h1>
+      <div class="mt-4 md:mt-0 flex gap-4 justify-center">
+        <a href="index.html" class="hover:underline">Главная</a>
+        <a href="nutrition.html" class="hover:underline">Питание</a>
+        <a href="training.html" class="font-semibold underline">Тренировки</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <table class="table-auto w-full border border-gray-300">
+      <thead>
+        <tr class="bg-indigo-200">
+          <th class="p-2 border">День</th>
+          <th class="p-2 border">Упражнения</th>
+          <th class="p-2 border">Цель</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200 text-sm md:text-base">
+        <tr>
+          <td class="p-2 border font-semibold">Пн</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="mon-ex">
+            Кардио 15 мин (бег/скакалка)<br>
+            Пресс 3х20<br>
+            Приседания 3х15
+          </td>
+          <td class="p-2 border">Сжигание жира</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=2tM1LFFxeKg" target="_blank" class="text-indigo-600 underline">Кардио дома на русском</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Вт</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="tue-ex">
+            Отжимания 4х12<br>
+            Приседания 4х20<br>
+            Планка 3х40 сек
+          </td>
+          <td class="p-2 border">Мышцы рук и ног</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=6k9bA3pN2nE" target="_blank" class="text-indigo-600 underline">Отжимания и техника (русский)</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Ср</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="wed-ex">
+            Отдых / растяжка<br>
+            <span class="text-xs text-gray-500">(Рекомендуем: <a href="https://www.youtube.com/watch?v=QJQ0hUqKXlE" target="_blank" class="underline">видео</a>)</span>
+          </td>
+          <td class="p-2 border">Восстановление</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=QJQ0hUqKXlE" target="_blank" class="text-indigo-600 underline">Растяжка для начинающих (русский)</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Чт</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="thu-ex">
+            Кардио 10 мин<br>
+            Планка 3х30 сек<br>
+            Выпады 3х15 на каждую ногу
+          </td>
+          <td class="p-2 border">Выносливость</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=Qn2y6I1QvWg" target="_blank" class="text-indigo-600 underline">Кардио и выносливость (русский)</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Пт</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="fri-ex">
+            Приседания 4х15<br>
+            Пресс 3х25<br>
+            Отжимания 3х10
+          </td>
+          <td class="p-2 border">Ноги + пресс</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=Qwq7BYOnDrM" target="_blank" class="text-indigo-600 underline">Ноги и пресс (русский)</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Сб</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="sat-ex">
+            Йога / активная прогулка<br>
+            <span class="text-xs text-gray-500">(Рекомендуем: <a href="https://www.youtube.com/watch?v=4pKly2JojMw" target="_blank" class="underline">йога-видео (русский)</a>)</span>
+          </td>
+          <td class="p-2 border">Активный отдых</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=4pKly2JojMw" target="_blank" class="text-indigo-600 underline">Йога для начинающих (русский)</a></td>
+        </tr>
+        <tr>
+          <td class="p-2 border font-semibold">Вс</td>
+          <td class="p-2 border cursor-pointer" onclick="toggleExercise(this)" data-id="sun-ex">
+            Растяжка, лёгкое кардио<br>
+            <span class="text-xs text-gray-500">(Рекомендуем: <a href="https://www.youtube.com/watch?v=QJQ0hUqKXlE" target="_blank" class="underline">разминка (русский)</a>)</span>
+          </td>
+          <td class="p-2 border">Восстановление</td>
+        </tr>
+        <tr>
+          <td colspan="3" class="bg-blue-50 text-xs text-center p-2">Видео для изучения: <a href="https://www.youtube.com/watch?v=QJQ0hUqKXlE" target="_blank" class="text-indigo-600 underline">Растяжка и восстановление (русский)</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center mt-10">
+      <a href="index.html" class="text-indigo-600 hover:underline">← Назад на главную</a>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2025 Фитнес-дом. Все права защищены.
+  </footer>
+</body>
+</html>
